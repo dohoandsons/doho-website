@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DOHO AND SONS ENTERPRISE | Printing & Advertising</title>
+
+<style>
+:root {
+    --green: #006B3C;
+    --dark: #064E3B;
+    --light: #F0F9F4;
+    --white: #FFFFFF;
+    --gold: #C9A86A;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--white);
+    color: #26352D;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.brand h2 {
+    color: var(--green);
+    margin: 0;
+    font-size: 23px;
+}
+
+.brand p {
+    margin: 5px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 550px;
+    background: linear-gradient(
+        135deg,
+        #064E3B,
+        #009B4D
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 58px);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #D7F8DF;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: var(--green);
+    padding: 15px 28px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* GENERAL SECTION */
+
+section {
+    padding: 80px 8%;
+    scroll-margin-top: 110px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64756A;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--white);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* SERVICES */
+
+.services-section {
+    background: var(--light);
+}
+
+.services {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #E0EEE5;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,107,60,0.13);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--green);
+}
+
+.service-card p {
+    color: #64756A;
+    line-height: 1.7;
+}
+
+/* PORTFOLIO */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: var(--light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.project img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project h3 {
+    padding: 10px 20px;
+    color: var(--dark);
+}
+
+/* QUOTATION */
+
+.quotation {
+    background: var(--light);
+}
+
+.quote-box {
+    background: white;
+    max-width: 550px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+}
+
+.quote-box label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.quote-box input,
+.quote-box select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #D5E5DB;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.quote-box button {
+    background: var(--green);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.quote-box button:hover {
+    background: var(--dark);
+}
+
+.result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.quote-note {
+    font-size: 12px;
+    color: #68786F;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title h2 {
+    color: white;
+}
+
+.contact p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    background: #033528;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+/* WHATSAPP FLOATING */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #25D366;
+    color: white;
+    padding: 17px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 6%;
+        scroll-margin-top: 200px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+        padding: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="brand">
+<img src="Logo.jpeg.jpeg" alt="DOHO AND SONS" style="width:100px;height:auto;">
+
+<div>
+<h2>DOHO AND SONS</h2>
+<p>PRINTING & ADVERTISING SOLUTIONS</p>
+</div>
+
+</div>
+
+<nav>
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#services">SERVICES</a>
+<a href="#portfolio">PROJECTS</a>
+<a href="#quotation">QUOTATION</a>
+<a href="#contact">CONTACT</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+WE DESIGN.<br>
+WE PRINT.<br>
+<span>WE INSTALL.</span>
+</h1>
+
+<p>
+Professional Printing, Advertising
+& Signage Solutions in Miri, Sarawak.
+</p>
+
+<p>
+Serving Our Customers Since 2015
+</p>
+
+<a href="#services" class="btn">
+EXPLORE SERVICES
+</a>
+
+<a href="#quotation" class="btn btn-outline">
+GET QUOTATION
+</a>
+
+</div>
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-title">
+<h2>ABOUT OUR COMPANY</h2>
+<p>Your Trusted Printing Partner</p>
+</div>
+
+<div class="about-content">
+
+<p>
+DOHO AND SONS ENTERPRISE is a printing
+and advertising company based in Miri,
+Sarawak.
+</p>
+
+<p>
+Established in 2015, we provide
+printing, signage, graphic design
+and installation services.
+</p>
+
+<p>
+Our goal is to deliver quality products,
+professional workmanship and reliable
+service to our customers.
+</p>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services-section" id="services">
+
+<div class="section-title">
+<h2>OUR SERVICES</h2>
+<p>Complete Printing & Advertising Solutions</p>
+</div>
+
+<div class="services">
+
+<div class="service-card">
+<div class="service-icon">🖨️</div>
+<h3>BANNER PRINTING</h3>
+<p>Banner, Tarpaulin & Large Format Printing</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🏢</div>
+<h3>SIGNBOARD</h3>
+<p>GI Signboard, Shop Signage & Road Signage</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🔠</div>
+<h3>3D LETTERING</h3>
+<p>Custom 3D Letters & Corporate Signage</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">✂️</div>
+<h3>STICKER PRINTING</h3>
+<p>UV Sticker, Die Cut & Custom Stickers</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">💡</div>
+<h3>LIGHTBOX</h3>
+<p>LED Lightbox & Illuminated Signage</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🎨</div>
+<h3>GRAPHIC DESIGN</h3>
+<p>Professional Artwork & Branding Design</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🪧</div>
+<h3>ACRYLIC SIGNAGE</h3>
+<p>Acrylic Display & Custom Signage</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🛠️</div>
+<h3>INSTALLATION</h3>
+<p>Signage Installation & Advertising Setup</p>
+</div>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<div class="section-title">
+<h2>OUR PROJECTS</h2>
+<p>Some of Our Printing & Signage Works</p>
+</div>
+
+<div class="portfolio-grid">
+<div class="project">
+    <img src="DOHO WEBSITE/Vivid.png" alt="Signboard Installation">
+    <h3>Signboard Installation</h3>
+</div>
+
+<div class="project">
+    <img src="DOHO WEBSITE/pan borneo.png" alt="Banner Printing">
+    <h3>Banner Printing</h3>
+</div>
+
+<div class="project">
+ <img src="DOHO WEBSITE/3d.jpg" alt="3D Lettering">
+<h3>3D Lettering</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- QUOTATION -->
+
+<section class="quotation" id="quotation">
+
+<div class="section-title">
+<h2>INSTANT PRICE ESTIMATE</h2>
+<p>Calculate Your Printing Cost</p>
+</div>
+
+<div class="quote-box">
+
+<label>SELECT SERVICE</label>
+
+<select id="service">
+<option value="3">Banner Printing - RM3/sqft</option>
+<option value="25">Signage - RM25/sqft</option>
+<option value="15">GI Signage - RM15/sqft</option>
+<option value="35">Acrylic - RM35/sqft</option>
+<option value="35">Road Signage - RM35/sqft</option>
+<option value="120">3D Lettering - RM120/sqft</option>
+<option value="12">UV Sticker - RM12/sqft</option>
+<option value="10">White Sticker - RM10/sqft</option>
+<option value="40">Lightbox - RM40/sqft</option>
+</select>
+
+<label>WIDTH (FEET)</label>
+<input type="number" id="width" min="0.01" step="any"
+placeholder="Example: 4">
+
+<label>HEIGHT (FEET)</label>
+<input type="number" id="height" min="0.01" step="any"
+placeholder="Example: 2">
+
+<label>QUANTITY</label>
+<input type="number" id="qty" value="1" min="1" step="1">
+
+<button onclick="calculatePrice()">
+CALCULATE PRICE
+</button>
+
+<div class="result" id="result"></div>
+
+<p class="quote-note">
+Prices are estimates only.
+Final quotation may vary based on
+materials, design, finishing and installation.
+</p>
+
+<button onclick="sendQuotation()">
+REQUEST QUOTATION VIA WHATSAPP
+</button>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="section-title">
+<h2>CONTACT US</h2>
+</div>
+
+<h3>DOHO AND SONS ENTERPRISE</h3>
+
+<p>
+Lot 1129, Lorong 2C<br>
+Piasau Jaya Fasa 2<br>
+Miri, Sarawak, Malaysia
+</p>
+
+<p>
+Phone: 010-509 2891
+</p>
+
+<p>
+Email: dohoandsons@gmail.com
+</p>
+
+<a class="btn"
+href="https://wa.me/60105092891"
+target="_blank"
+rel="noopener noreferrer">
+CONTACT VIA WHATSAPP
+</a>
+
+<a class="btn btn-outline"
+href="https://www.facebook.com/DohoandSons/"
+target="_blank"
+rel="noopener noreferrer">
+VISIT FACEBOOK
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 DOHO AND SONS ENTERPRISE
+</p>
+
+<p>
+Printing • Advertising • Signage • Installation
+</p>
+
+<p>All Rights Reserved</p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a class="whatsapp-float"
+href="https://wa.me/60105092891"
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
+</a>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+let lastQuote = null;
+
+function calculatePrice() {
+
+    const service =
+        document.getElementById("service");
+
+    const width =
+        Number(document.getElementById("width").value);
+
+    const height =
+        Number(document.getElementById("height").value);
+
+    const qty =
+        Number(document.getElementById("qty").value);
+
+    const rate = Number(service.value);
+
+    const result =
+        document.getElementById("result");
+
+    lastQuote = null;
+
+    if (
+        !Number.isFinite(width) ||
+        !Number.isFinite(height) ||
+        !Number.isInteger(qty) ||
+        width <= 0 ||
+        height <= 0 ||
+        qty <= 0
+    ) {
+        result.innerHTML =
+            "Please enter valid dimensions and quantity.";
+        return;
+    }
+
+    const area = width * height;
+    const total = area * rate * qty;
+
+    const serviceName =
+        service.options[service.selectedIndex].text;
+
+    lastQuote = {
+        serviceName,
+        width,
+        height,
+        qty,
+        area,
+        total
+    };
+
+    result.innerHTML =
+        "Estimated Price: RM " +
+        total.toFixed(2);
+}
+
+function sendQuotation() {
+
+    calculatePrice();
+
+    if (!lastQuote) {
+        alert("Please enter valid measurements first.");
+        return;
+    }
+
+    const q = lastQuote;
+
+    const message =
+        "Hello DOHO AND SONS, I would like a quotation.%0A%0A" +
+        "Service: " + encodeURIComponent(q.serviceName) + "%0A" +
+        "Width: " + q.width + " ft%0A" +
+        "Height: " + q.height + " ft%0A" +
+        "Quantity: " + q.qty + "%0A" +
+        "Estimated Price: RM " + q.total.toFixed(2) +
+        "%0A%0APlease confirm the final price.";
+
+    window.open(
+        "https://wa.me/60105092891?text=" + message,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
+</script>
+
+</body>
+</html>
